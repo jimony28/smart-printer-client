@@ -7,9 +7,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/upload" element={<UploadPage />} />
+        {/* Force dashboard as index route */}
+        <Route index element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/upload" element={<UploadPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
